@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Visitor Manager | Contact{% endblock %}
+{% block link-js %}
+<script>
+    var token = '{{csrf_token}}';
+    var store_message_url = "{% url 'store_message' %}";
+</script>
+<script src="{{ baseUrl }}js/contact.js"></script>
+{% endblock %}
+{% block content %}
+    
+<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <p class="w3-opacity w3-center"><i>Interested? Contact us!</i></p>
+    <div class="w3-row w3-padding-32">
+        <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> Kolkata, India<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +91 8617756014<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: bubai666sen@mail.com<br>
+        </div>
+        <div class="w3-col m6">
+        <form action="#">
+            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                    <input class="w3-input w3-border pd-600px" type="text" placeholder="Name"  name="Name" id="name">
+                </div>
+                <div class="w3-half">
+                    <input class="w3-input w3-border" type="email" placeholder="Email"  name="Email" id="email">
+                </div>
+            </div>
+            <div style="margin-bottom:8px">
+                <input class="w3-input w3-border" type="text" placeholder="Subject"  name="Subject" id="subject">
+            </div>
+            
+            <div>
+                <textarea class="w3-input w3-border" placeholder="Message"  name="Message" id="message"></textarea>
+            </div>
+
+            <button class="w3-button w3-black w3-section w3-right" type="button" onclick="ajaxForMessegeTransfer();">SEND</button>
+            <div id="snackbar"></div>
+        </form>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

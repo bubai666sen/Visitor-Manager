@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Visitor Manager | Home{% endblock %}
+{% block content %}
+    <style>
+        body  {
+        background-image: url("{{ baseUrl }}images/body_pic.jpg");
+        }
+  </style>
+    <div class="wpb_text_column wpb_content_element ">
+        <div class="wpb_wrapper">
+            <div class="jumbotron">
+                <div class="container text-center">
+                  <h1>Welcome Visitor!</h1>
+                  <p>This is a Visitor Management System. You can add a visitor and check their status as an admin.</p>
+                    <a href="/admin" target="_blank" class="btn btn-info btn-lg">Admin Panel</a>
+                    <a href="{% url 'contact' %}" target="_blank" class="btn btn-info btn-lg">Contact Us</a>
+                </div>
+              </div>
+          
+              <!-- <div class="container-fluid bg-3 text-center">
+                <h3>Some of my Work</h3><br>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <a href="https://pypi.org/project/sen-chatbot/" target="_blank">sen-chatbot</a>
+                    <p>Python package for creating programmable chatbots</p><b>.</b>
+                  </div>
+                  <div class="col-sm-3">
+                     <a href="/talk-jhal-misti" target="_blank">TalkWikiBot</a>
+                     <p>A Chatbot created by Python3 and Django2</p></p><b>.</b>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="https://github.com/bubai666sen/LIBMS" target="_blank">LIBMS</a>
+                    <p>Library Management System using Python3, tkinter and sqlite3</p><b>.</b>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="https://github.com/bubai666sen/LibraryManager" target="_blank">Library Manager</a>
+                    <p>Library Management System using Python3 and Django2</p><b>.</b>
+                  </div>
+                </div>
+              </div><br> -->
+              <center>
+                <a href="https://www.facebook.com/Sourav-Sen-1644274762510180/" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://github.com/bubai666sen" target="_blank" class="fa fa-github"></a>
+                <a href="mailto://bubai666sen@gmail.com" target="_blank" class="fa fa-google"></a>
+                <a href="https://www.linkedin.com/in/sourav-sen-03a478127/" target="_blank" class="fa fa-linkedin"></a>
+                <br><br>
+              </center>
+          
+        </div>
+    </div>
+    
+{% endblock %}
