@@ -22,8 +22,10 @@ from django.conf import settings
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^contact/admin/', admin.site.urls),
+    re_path(r'^about/admin/', admin.site.urls),
     path('',views.index,name="index"),
     path('contact/', include('Contact.urls')),
+    path('about/',views.about,name="about"),
 ] 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -62,6 +62,11 @@
                     </ul>
                 </li> -->
                 <li class=""><a href="admin">Login</a></li>
+                {% if active and active == "about" %}
+                    <li class="active"><a href="{% url 'about' %}">About Us</a></li>
+                {% else %}
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                {% endif %}
                 {% if active and active == "contact" %}
                     <li class="active"><a href="{% url 'contact' %}">Contact Us</a></li>
                 {% else %}
