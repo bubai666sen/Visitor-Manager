@@ -10,6 +10,6 @@ def contact(request):
     return render(request,'contact.html',data)
 
 def store_message(request):
-    message = Message(name=request.POST['name'],email=request.POST['email'],subject=request.POST['subject'],message=request.POST['message'])
+    message = Message(name=request.POST['name'],email=request.POST['email'],subject=request.POST['subject'],message=request.POST['message'],typ=request.POST['typ'],purpose=request.POST['purpose'])
     message.save()
     return JsonResponse({'success':True})

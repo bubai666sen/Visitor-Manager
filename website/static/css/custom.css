@@ -86,3 +86,9 @@
         margin-bottom:8px;
     }
   }
+
+  .hidden {
+    visibility: hidden !important;
+  }
+
+  

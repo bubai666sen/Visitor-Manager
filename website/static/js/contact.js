@@ -1,3 +1,19 @@
+$( document ).ready(function() {
+    manageContactType();
+});
+
+$("#id_typ").change(function() {
+    manageContactType();
+});
+
+function manageContactType() {
+    
+    if($("#id_typ").val()=="Visiting Request") {
+        $("#purpose").removeClass("hidden");
+    } else {
+        $("#purpose").addClass("hidden");
+    }
+}
 function snackbar(msg,status) {
     let x = document.getElementById("snackbar");
     x.innerHTML = msg;
@@ -10,6 +26,8 @@ function ajaxForMessegeTransfer() {
     let name = $("#name").val();
     let subject= $("#subject").val();
     let email = $("#email").val();
+    let typ = $("#id_typ").val();
+    let purpose = $("#purpose").val();
     let flag = false;
     let error = "";
     if(message=='') {
@@ -48,6 +66,13 @@ function ajaxForMessegeTransfer() {
             $("#email").removeClass('error');
         }
     }
+    if($("#id_typ").val()=="Visiting Request" && $("#purpose").val()=="") {
+        $("#purpose").addClass('error');
+        flag = true;
+        error = "All Fields are required! ";
+    } else {
+        $("#purpose").removeClass('error');
+    }
     if(flag) {
         snackbar(error,'snackbar-error');
         return;
@@ -62,6 +87,8 @@ function ajaxForMessegeTransfer() {
             email: email,
             subject: subject,
             message: message,
+            typ: typ,
+            purpose: purpose,
             //"X-CSRFToken": token
         },
         success: function(result){

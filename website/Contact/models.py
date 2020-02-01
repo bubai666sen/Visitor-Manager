@@ -30,6 +30,7 @@ class Message(models.Model):
         choices=STATUS,
         default='New',
     )
+    purpose = models.CharField(max_length = 255,default="N/A")
     # created_at = models.DateTimeField(default=timezone.now())
     # updated_at = models.DateTimeField(default=timezone.now())
     created_at = models.DateTimeField(auto_now_add=True)

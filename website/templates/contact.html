@@ -28,15 +28,37 @@
                     <input class="w3-input w3-border" type="email" placeholder="Email"  name="Email" id="email">
                 </div>
             </div>
+            
+            
             <div style="margin-bottom:8px">
                 <input class="w3-input w3-border" type="text" placeholder="Subject"  name="Subject" id="subject">
             </div>
             
-            <div>
+            <div style="margin-bottom:8px">
                 <textarea class="w3-input w3-border" placeholder="Message"  name="Message" id="message"></textarea>
             </div>
-
-            <button class="w3-button w3-black w3-section w3-right" type="button" onclick="ajaxForMessegeTransfer();">SEND</button>
+            
+            <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
+                <div class="w3-half">
+                    <select name="typ" id="id_typ" class="w3-input w3-border" onchange="manageContactType();">
+                        <option value="Contact" selected="">Contact Type</option>
+                        
+                        <option value="Feedback">Feedback</option>
+                        
+                        <option value="Visiting Request">Visiting Request</option>
+                        
+                        <option value="Report">Report</option>
+                        
+                        <option value="Offer">Offer</option>
+                    
+                    </select>
+                </div>
+                <div class="w3-half">
+                    <input class="w3-input w3-border pd-600px" type="text" placeholder="Purpose of meet"  name="purpose" id="purpose">
+                </div>
+                <button class="w3-button w3-black w3-section w3-right" type="button" onclick="ajaxForMessegeTransfer();">SEND</button>
+            </div>
+            
             <div id="snackbar"></div>
         </form>
         </div>
