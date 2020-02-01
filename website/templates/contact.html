@@ -10,8 +10,13 @@
 {% block content %}
     
 <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    {% if active and active == "feedback" %}
+    <h2 class="w3-wide w3-center">Feedback</h2>
+    <p class="w3-opacity w3-center"><i>Give us your review!</i></p>
+    {% else %}
     <h2 class="w3-wide w3-center">CONTACT</h2>
     <p class="w3-opacity w3-center"><i>Interested? Contact us!</i></p>
+    {% endif %}
     <div class="w3-row w3-padding-32">
         <div class="w3-col m6 w3-large w3-margin-bottom">
         <i class="fa fa-map-marker" style="width:30px"></i> Kolkata, India<br>
@@ -41,10 +46,13 @@
             <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
                 <div class="w3-half">
                     <select name="typ" id="id_typ" class="w3-input w3-border" onchange="manageContactType();">
+                        {% if active and active == "feedback" %}
+                        <option value="Contact">Contact Type</option>
+                        <option value="Feedback" selected>Feedback</option>
+                        {% else %}
                         <option value="Contact" selected="">Contact Type</option>
-                        
                         <option value="Feedback">Feedback</option>
-                        
+                        {% endif %}
                         <option value="Visiting Request">Visiting Request</option>
                         
                         <option value="Report">Report</option>

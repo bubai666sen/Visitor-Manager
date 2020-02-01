@@ -3,6 +3,7 @@
     <a class="dropdown-item" href="{% url 'index' %}">Home</a>&nbsp;
     <a class="dropdown-item" href="{% url 'about' %}">About Us</a>&nbsp;
     <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>&nbsp;
+    <a class="dropdown-item" href="{% url 'feedbacks' %}">Feedbacks</a>&nbsp;
     {% if user.has_usable_password %}
         <a class="dropdown-item" href="{% url 'admin:password_change' %}">Change Password</a>&nbsp;
     {% endif %}

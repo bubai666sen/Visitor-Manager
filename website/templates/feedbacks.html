@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Visitor Manager | feedbacks{% endblock %}
+{% block content %}
+    <div >
+        <h1 >User Feedbacks <a class="btn btn-lg btn-success" href="{% url 'feedback' %}">Give Feedback</a></h1>
+        
+    </div>
+    
+    <div >
+        
+            <table id="library_user_requested" class="table-responsive datatable footable table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in feedbacks %}
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{item.subject}}</td>
+                            <td>{{item.message}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        
+    </div>
+    <script>
+        $(document).ready( function () {
+            $('.datatable').DataTable();
+        } );
+    </script>
+{% endblock %}
