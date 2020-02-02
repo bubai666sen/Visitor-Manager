@@ -1,17 +1,27 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Message
+from .models import *
 
 # Create your views here.
 def contact(request):
+    try:
+        site_contact = SiteContact.objects.get()
+    except:
+        site_contact = None
     data = {
         'active':'contact',
+        'site_contact': site_contact,
     }
     return render(request,'contact.html',data)
 
 def feedback(request):
+    try:
+        site_contact = SiteContact.objects.get()
+    except:
+        site_contact = None
     data = {
         'active':'feedback',
+        'site_contact': site_contact,
     }
     return render(request,'contact.html',data)
 

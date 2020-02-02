@@ -19,9 +19,27 @@
     {% endif %}
     <div class="w3-row w3-padding-32">
         <div class="w3-col m6 w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker" style="width:30px"></i> Kolkata, India<br>
-        <i class="fa fa-phone" style="width:30px"></i> Phone: +91 8617756014<br>
-        <i class="fa fa-envelope" style="width:30px"> </i> Email: bubai666sen@mail.com<br>
+        <i class="fa fa-map-marker" style="width:30px"></i>
+        {% if site_contact and site_contact.short_address %}
+        {{site_contact.short_address}}
+        {% else %}
+         Kolkata, India
+        {% endif %}
+        <br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: 
+        {% if site_contact and site_contact.phone %}
+        {{site_contact.phone}}
+        {% else %}
+        +91 8617756014
+        {% endif %}
+        <br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: 
+        {% if site_contact and site_contact.email %}
+        {{site_contact.email}}
+        {% else %}
+        bubai666sen@mail.com
+        {% endif %}
+        <br>
         </div>
         <div class="w3-col m6">
         <form action="#">

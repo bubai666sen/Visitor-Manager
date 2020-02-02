@@ -1,17 +1,47 @@
 {% extends "base.html" %}
-{% block title %}Visitor Manager | about{% endblock %}
+{% block title %}
+{% if page and page.title %}
+{{page.title}}
+{% else %}
+Visitor Manager | About
+{% endif %}
+{% endblock %}
 {% block content %}
+{% if page and page.background_image and background_image %}
+<style>
+    body  {
+    background-image: url("{{ baseUrl }}uploads/cms/{{background_image}}");
+    }
+</style>
+{% else %}
     <style>
         body  {
         background-image: url("{{ baseUrl }}images/body_pic.jpg");
         }
   </style>
+{% endif %}
     <div class="wpb_text_column wpb_content_element ">
         <div class="wpb_wrapper">
             <div class="jumbotron">
                 <div class="container text-center">
-                  <h1>About Us!</h1>
-                  <p>This is a Visitor Management System. You can add a visitor and check their status as an admin.</p>
+                  <h1>
+                      {% if page and page.heading %}
+                      {{page.heading}}
+                      {% else %}
+                      About Us!
+                      {% endif %}
+                  </h1>
+                  {% if page and page.short_description %}
+                    <P>{{page.short_description}}</p>
+                  {% else %}
+                  {% endif %}
+                  <p>
+                  {% if page and page.long_description %}
+                  {{page.long_description}}
+                  {% else %}
+                  This is a Visitor Management System. You can add a visitor and check their status as an admin.
+                  {% endif %}
+                  </p>
                 </div>
               </div>
           
